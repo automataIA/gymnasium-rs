@@ -1,0 +1,15 @@
+{
+  "name": "gymnasium-rs-style",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TailwindCSS 4 + DaisyUI 5 build for the Gymnasium Leptos app",
+  "scripts": {
+    "build:css": "tailwindcss -i style/input.css -o dist/tailwind.css --minify",
+    "watch:css": "tailwindcss -i style/input.css -o dist/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "daisyui": "^5.0.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

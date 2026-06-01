@@ -1,0 +1,31 @@
+[build]
+target = "index.html"
+release = false
+dist = "dist"
+public_url = "/"
+filehash = true
+inject_scripts = true
+
+# Genera il CSS di Tailwind 4 + daisyUI 5 prima di ogni build.
+# L'output finisce in style/output.css, poi il pipeline `rel="css"` di Trunk
+# lo hasha e lo copia in dist con il public_url corretto.
+[[hooks]]
+stage = "pre_build"
+command = "npx"
+command_arguments = [
+    "@tailwindcss/cli",
+    "-i",
+    "style/input.css",
+    "-o",
+    "style/output.css",
+    "--minify",
+]
+
+[watch]
+watch = ["src", "style/input.css", "index.html"]
+ignore = ["style/output.css", "dist"]
+
+[serve]
+addresses = ["127.0.0.1"]
+port = 3000
+open = false

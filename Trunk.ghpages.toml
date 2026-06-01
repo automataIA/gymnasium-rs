@@ -1,0 +1,19 @@
+[build]
+target = "index.html"
+release = true
+dist = "dist"
+public_url = "/gymnasium-rs/"
+filehash = true
+inject_scripts = true
+
+[[hooks]]
+stage = "pre_build"
+command = "npx"
+command_arguments = [
+    "@tailwindcss/cli",
+    "-i",
+    "style/input.css",
+    "-o",
+    "style/output.css",
+    "--minify",
+]
