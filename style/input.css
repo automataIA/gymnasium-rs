@@ -66,7 +66,8 @@ body {
   width: 100%;
   max-width: 430px;
   margin-inline: auto;
-  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
   background: var(--color-base-100);
   position: relative;
   display: flex;
