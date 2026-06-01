@@ -6,6 +6,11 @@ public_url = "/gymnasium-rs/"
 filehash = true
 inject_scripts = true
 
+# wasm-opt 116 (default di Trunk) non sa parsare table.fill emesso da Rust >=1.82.
+# Pin a una versione di binaryen che lo supporta. Vedi trunk-rs/trunk#904.
+[tools]
+wasm_opt = "version_123"
+
 [[hooks]]
 stage = "pre_build"
 command = "npx"
